@@ -156,10 +156,9 @@ class DiLoCoCoordinator:
       2. Nodes submit ``LocalUpdate`` objects to the coordinator.
       3. The coordinator averages gradients and updates global weights.
       4. Updated global weights are distributed back to all nodes.
-
-    This implementation uses SIMPLE gradient averaging only (no trust
-    weighting, no 6D economic attribution, no proof-of-useful-compute).
     """
+
+    # This implementation uses simple gradient averaging only.
 
     def __init__(self) -> None:
         self._averager = GradientAverager()
